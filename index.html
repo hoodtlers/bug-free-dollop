@@ -7,31 +7,31 @@
 <style>
 body {
   margin: 0;
-  background: black; /* background full hitam */
+  background: black;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-/* Container portrait */
-.video-container {
+/* Frame video (patokan semua elemen) */
+.video-frame {
   position: relative;
   width: 100%;
-  max-width: 400px; /* ukuran di HP */
-  aspect-ratio: 9/16; /* portrait */
+  max-width: 400px;
+  height: 80vh; /* tinggi tetap biar controls nempel */
   background: black;
   overflow: hidden;
 }
 
 /* Gambar */
-.video-container img {
+.video-frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* biar pas & tidak gepeng */
+  object-fit: contain; /* tetap tidak kepotong */
 }
 
-/* Tombol play tengah */
+/* Tombol play */
 .play-button {
   position: absolute;
   top: 50%;
@@ -39,7 +39,7 @@ body {
   transform: translate(-50%, -50%);
   width: 70px;
   height: 70px;
-  background: rgba(0, 123, 255, 0.9); /* biru kayak contoh */
+  background: rgba(0, 123, 255, 0.9);
   color: white;
   font-size: 30px;
   border-radius: 50%;
@@ -48,7 +48,7 @@ body {
   justify-content: center;
 }
 
-/* Bar bawah */
+/* Controls nempel ke frame */
 .controls {
   position: absolute;
   bottom: 0;
@@ -86,7 +86,7 @@ body {
 <body>
 
 <a href="https://blackhub-baddies.github.io/lTg2YGjw1/">
-  <div class="video-container">
+  <div class="video-frame">
 
     <img src="https://cdn.aceimg.com/6ca9b97c8.png">
 
