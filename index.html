@@ -7,44 +7,31 @@
 <style>
 body {
   margin: 0;
-  padding: 20px;
-  background: #f5f5f5;
+  background: black; /* background full hitam */
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/* Wrapper biar tidak mentok pinggir */
-.wrapper {
-  width: 100%;
-  max-width: 800px; /* desktop */
-}
-
-/* Container video */
+/* Container portrait */
 .video-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 16/9; /* biar tidak penyok */
-  border-radius: 12px;
+  max-width: 400px; /* ukuran di HP */
+  aspect-ratio: 9/16; /* portrait */
+  background: black;
   overflow: hidden;
-  cursor: pointer;
 }
 
-/* Gambar tidak gepeng */
+/* Gambar */
 .video-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* penting biar proporsional */
+  object-fit: cover; /* biar pas & tidak gepeng */
 }
 
-/* Overlay halus */
-.video-container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.2);
-}
-
-/* Tombol play */
+/* Tombol play tengah */
 .play-button {
   position: absolute;
   top: 50%;
@@ -52,26 +39,24 @@ body {
   transform: translate(-50%, -50%);
   width: 70px;
   height: 70px;
-  background: rgba(255,255,255,0.9);
-  color: black;
+  background: rgba(0, 123, 255, 0.9); /* biru kayak contoh */
+  color: white;
   font-size: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
 }
 
-/* Controls bawah */
+/* Bar bawah */
 .controls {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 8px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
   color: white;
   font-size: 12px;
-  z-index: 2;
 }
 
 .progress {
@@ -84,53 +69,39 @@ body {
 
 .progress::after {
   content: "";
-  width: 30%;
+  width: 20%;
   height: 100%;
   background: white;
   position: absolute;
 }
 
+/* Time */
 .time {
   display: flex;
   justify-content: space-between;
-}
-
-/* 📱 Versi HP */
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-
-  .play-button {
-    width: 55px;
-    height: 55px;
-    font-size: 22px;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-  <a href="https://blackhub-baddies.github.io/lTg2YGjw1/">
-    <div class="video-container">
+<a href="https://blackhub-baddies.github.io/lTg2YGjw1/">
+  <div class="video-container">
 
-      <img src="https://cdn.aceimg.com/6ca9b97c8.png">
+    <img src="https://cdn.aceimg.com/6ca9b97c8.png">
 
-      <div class="play-button">▶</div>
+    <div class="play-button">▶</div>
 
-      <div class="controls">
-        <div class="progress"></div>
-        <div class="time">
-          <span>00:00</span>
-          <span>-00:27</span>
-        </div>
+    <div class="controls">
+      <div class="progress"></div>
+      <div class="time">
+        <span>0:00</span>
+        <span>2:14</span>
       </div>
-
     </div>
-  </a>
-</div>
+
+  </div>
+</a>
 
 </body>
 </html>
